@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Rachel Brindle. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for MockHTTP.
 FOUNDATION_EXPORT double MockHTTPVersionNumber;

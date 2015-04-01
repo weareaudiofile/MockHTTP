@@ -9,7 +9,26 @@
 /* Begin PBXBuildFile section */
 		895635651ACBAD6800CA60E9 /* MockHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 895635641ACBAD6800CA60E9 /* MockHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8956356B1ACBAD6900CA60E9 /* MockHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */; };
-		895635721ACBAD6900CA60E9 /* MockHTTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635711ACBAD6900CA60E9 /* MockHTTPTests.swift */; };
+		8956357D1ACBAE4800CA60E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956357B1ACBAE4800CA60E9 /* Nimble.framework */; };
+		8956357E1ACBAE4800CA60E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956357C1ACBAE4800CA60E9 /* Quick.framework */; };
+		895635801ACBAE5D00CA60E9 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8956357B1ACBAE4800CA60E9 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		895635811ACBAE5D00CA60E9 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 8956357C1ACBAE4800CA60E9 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		895635831ACBAE7F00CA60E9 /* MockHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635821ACBAE7F00CA60E9 /* MockHTTP.swift */; };
+		895635851ACBAEA800CA60E9 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635841ACBAEA800CA60E9 /* URLProtocol.swift */; };
+		895635871ACBAEB100CA60E9 /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635861ACBAEB100CA60E9 /* URLResponse.swift */; };
+		895635891ACBB41300CA60E9 /* MockHTTPSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635881ACBB41300CA60E9 /* MockHTTPSpec.swift */; };
+		8956358B1ACBB42700CA60E9 /* URLProtocolSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956358A1ACBB42700CA60E9 /* URLProtocolSpec.swift */; };
+		895635961ACBC0A500CA60E9 /* MockHTTP-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 895635951ACBC0A500CA60E9 /* MockHTTP-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8956359C1ACBC0A500CA60E9 /* MockHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895635911ACBC0A500CA60E9 /* MockHTTP.framework */; };
+		895635AA1ACBC0FE00CA60E9 /* MockHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635821ACBAE7F00CA60E9 /* MockHTTP.swift */; };
+		895635AB1ACBC0FE00CA60E9 /* URLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635841ACBAEA800CA60E9 /* URLProtocol.swift */; };
+		895635AC1ACBC0FE00CA60E9 /* URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635861ACBAEB100CA60E9 /* URLResponse.swift */; };
+		895635AF1ACBC10300CA60E9 /* MockHTTPSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895635881ACBB41300CA60E9 /* MockHTTPSpec.swift */; };
+		895635B01ACBC10300CA60E9 /* URLProtocolSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956358A1ACBB42700CA60E9 /* URLProtocolSpec.swift */; };
+		895635B31ACBC1EE00CA60E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895635B11ACBC1EE00CA60E9 /* Nimble.framework */; };
+		895635B41ACBC1EE00CA60E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895635B21ACBC1EE00CA60E9 /* Quick.framework */; };
+		895635B61ACBC20600CA60E9 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 895635B11ACBC1EE00CA60E9 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		895635B71ACBC20600CA60E9 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 895635B21ACBC1EE00CA60E9 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +39,41 @@
 			remoteGlobalIDString = 8956355E1ACBAD6800CA60E9;
 			remoteInfo = MockHTTP;
 		};
+		8956359D1ACBC0A500CA60E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 895635561ACBAD6800CA60E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 895635901ACBC0A500CA60E9;
+			remoteInfo = "MockHTTP-OSX";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8956357F1ACBAE5000CA60E9 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				895635801ACBAE5D00CA60E9 /* Nimble.framework in Copy Frameworks */,
+				895635811ACBAE5D00CA60E9 /* Quick.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		895635B51ACBC1F600CA60E9 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				895635B61ACBC20600CA60E9 /* Nimble.framework in Copy Frameworks */,
+				895635B71ACBC20600CA60E9 /* Quick.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,7 +81,20 @@
 		895635641ACBAD6800CA60E9 /* MockHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockHTTP.h; sourceTree = "<group>"; };
 		8956356A1ACBAD6900CA60E9 /* MockHTTPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockHTTPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		895635701ACBAD6900CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		895635711ACBAD6900CA60E9 /* MockHTTPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPTests.swift; sourceTree = "<group>"; };
+		8956357B1ACBAE4800CA60E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		8956357C1ACBAE4800CA60E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
+		895635821ACBAE7F00CA60E9 /* MockHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHTTP.swift; sourceTree = "<group>"; };
+		895635841ACBAEA800CA60E9 /* URLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocol.swift; sourceTree = "<group>"; };
+		895635861ACBAEB100CA60E9 /* URLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLResponse.swift; sourceTree = "<group>"; };
+		895635881ACBB41300CA60E9 /* MockHTTPSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHTTPSpec.swift; sourceTree = "<group>"; };
+		8956358A1ACBB42700CA60E9 /* URLProtocolSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolSpec.swift; sourceTree = "<group>"; };
+		895635911ACBC0A500CA60E9 /* MockHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		895635941ACBC0A500CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		895635951ACBC0A500CA60E9 /* MockHTTP-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MockHTTP-OSX.h"; sourceTree = "<group>"; };
+		8956359B1ACBC0A500CA60E9 /* MockHTTP-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MockHTTP-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		895635A11ACBC0A500CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		895635B11ACBC1EE00CA60E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		895635B21ACBC1EE00CA60E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +110,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8956356B1ACBAD6900CA60E9 /* MockHTTP.framework in Frameworks */,
+				8956357D1ACBAE4800CA60E9 /* Nimble.framework in Frameworks */,
+				8956357E1ACBAE4800CA60E9 /* Quick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8956358D1ACBC0A500CA60E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		895635981ACBC0A500CA60E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8956359C1ACBC0A500CA60E9 /* MockHTTP.framework in Frameworks */,
+				895635B31ACBC1EE00CA60E9 /* Nimble.framework in Frameworks */,
+				895635B41ACBC1EE00CA60E9 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +140,8 @@
 			children = (
 				895635611ACBAD6800CA60E9 /* MockHTTP */,
 				8956356E1ACBAD6900CA60E9 /* MockHTTPTests */,
+				895635921ACBC0A500CA60E9 /* MockHTTP-OSX */,
+				8956359F1ACBC0A500CA60E9 /* MockHTTP-OSXTests */,
 				895635601ACBAD6800CA60E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +151,8 @@
 			children = (
 				8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */,
 				8956356A1ACBAD6900CA60E9 /* MockHTTPTests.xctest */,
+				895635911ACBC0A500CA60E9 /* MockHTTP.framework */,
+				8956359B1ACBC0A500CA60E9 /* MockHTTP-OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				895635641ACBAD6800CA60E9 /* MockHTTP.h */,
+				895635821ACBAE7F00CA60E9 /* MockHTTP.swift */,
+				895635841ACBAEA800CA60E9 /* URLProtocol.swift */,
+				895635861ACBAEB100CA60E9 /* URLResponse.swift */,
 				895635621ACBAD6800CA60E9 /* Supporting Files */,
 			);
 			path = MockHTTP;
@@ -88,7 +180,10 @@
 		8956356E1ACBAD6900CA60E9 /* MockHTTPTests */ = {
 			isa = PBXGroup;
 			children = (
-				895635711ACBAD6900CA60E9 /* MockHTTPTests.swift */,
+				895635881ACBB41300CA60E9 /* MockHTTPSpec.swift */,
+				8956358A1ACBB42700CA60E9 /* URLProtocolSpec.swift */,
+				8956357B1ACBAE4800CA60E9 /* Nimble.framework */,
+				8956357C1ACBAE4800CA60E9 /* Quick.framework */,
 				8956356F1ACBAD6900CA60E9 /* Supporting Files */,
 			);
 			path = MockHTTPTests;
@@ -102,6 +197,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		895635921ACBC0A500CA60E9 /* MockHTTP-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				895635951ACBC0A500CA60E9 /* MockHTTP-OSX.h */,
+				895635931ACBC0A500CA60E9 /* Supporting Files */,
+			);
+			path = "MockHTTP-OSX";
+			sourceTree = "<group>";
+		};
+		895635931ACBC0A500CA60E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				895635941ACBC0A500CA60E9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8956359F1ACBC0A500CA60E9 /* MockHTTP-OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				895635B11ACBC1EE00CA60E9 /* Nimble.framework */,
+				895635B21ACBC1EE00CA60E9 /* Quick.framework */,
+				895635A01ACBC0A500CA60E9 /* Supporting Files */,
+			);
+			path = "MockHTTP-OSXTests";
+			sourceTree = "<group>";
+		};
+		895635A01ACBC0A500CA60E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				895635A11ACBC0A500CA60E9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -110,6 +240,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				895635651ACBAD6800CA60E9 /* MockHTTP.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8956358E1ACBC0A500CA60E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				895635961ACBC0A500CA60E9 /* MockHTTP-OSX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +279,7 @@
 				895635661ACBAD6900CA60E9 /* Sources */,
 				895635671ACBAD6900CA60E9 /* Frameworks */,
 				895635681ACBAD6900CA60E9 /* Resources */,
+				8956357F1ACBAE5000CA60E9 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +289,43 @@
 			name = MockHTTPTests;
 			productName = MockHTTPTests;
 			productReference = 8956356A1ACBAD6900CA60E9 /* MockHTTPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		895635901ACBC0A500CA60E9 /* MockHTTP-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSX" */;
+			buildPhases = (
+				8956358C1ACBC0A500CA60E9 /* Sources */,
+				8956358D1ACBC0A500CA60E9 /* Frameworks */,
+				8956358E1ACBC0A500CA60E9 /* Headers */,
+				8956358F1ACBC0A500CA60E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MockHTTP-OSX";
+			productName = "MockHTTP-OSX";
+			productReference = 895635911ACBC0A500CA60E9 /* MockHTTP.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8956359A1ACBC0A500CA60E9 /* MockHTTP-OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSXTests" */;
+			buildPhases = (
+				895635971ACBC0A500CA60E9 /* Sources */,
+				895635981ACBC0A500CA60E9 /* Frameworks */,
+				895635991ACBC0A500CA60E9 /* Resources */,
+				895635B51ACBC1F600CA60E9 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8956359E1ACBC0A500CA60E9 /* PBXTargetDependency */,
+			);
+			name = "MockHTTP-OSXTests";
+			productName = "MockHTTP-OSXTests";
+			productReference = 8956359B1ACBC0A500CA60E9 /* MockHTTP-OSXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -165,6 +341,12 @@
 						CreatedOnToolsVersion = 6.3;
 					};
 					895635691ACBAD6900CA60E9 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					895635901ACBC0A500CA60E9 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					8956359A1ACBC0A500CA60E9 = {
 						CreatedOnToolsVersion = 6.3;
 					};
 				};
@@ -183,6 +365,8 @@
 			targets = (
 				8956355E1ACBAD6800CA60E9 /* MockHTTP */,
 				895635691ACBAD6900CA60E9 /* MockHTTPTests */,
+				895635901ACBC0A500CA60E9 /* MockHTTP-OSX */,
+				8956359A1ACBC0A500CA60E9 /* MockHTTP-OSXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +386,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8956358F1ACBC0A500CA60E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		895635991ACBC0A500CA60E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -209,6 +407,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895635831ACBAE7F00CA60E9 /* MockHTTP.swift in Sources */,
+				895635851ACBAEA800CA60E9 /* URLProtocol.swift in Sources */,
+				895635871ACBAEB100CA60E9 /* URLResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +417,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				895635721ACBAD6900CA60E9 /* MockHTTPTests.swift in Sources */,
+				8956358B1ACBB42700CA60E9 /* URLProtocolSpec.swift in Sources */,
+				895635891ACBB41300CA60E9 /* MockHTTPSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8956358C1ACBC0A500CA60E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				895635AA1ACBC0FE00CA60E9 /* MockHTTP.swift in Sources */,
+				895635AB1ACBC0FE00CA60E9 /* URLProtocol.swift in Sources */,
+				895635AC1ACBC0FE00CA60E9 /* URLResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		895635971ACBC0A500CA60E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				895635B01ACBC10300CA60E9 /* URLProtocolSpec.swift in Sources */,
+				895635AF1ACBC10300CA60E9 /* MockHTTPSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +448,11 @@
 			isa = PBXTargetDependency;
 			target = 8956355E1ACBAD6800CA60E9 /* MockHTTP */;
 			targetProxy = 8956356C1ACBAD6900CA60E9 /* PBXContainerItemProxy */;
+		};
+		8956359E1ACBC0A500CA60E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 895635901ACBC0A500CA60E9 /* MockHTTP-OSX */;
+			targetProxy = 8956359D1ACBC0A500CA60E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -323,6 +549,7 @@
 		895635761ACBAD6900CA60E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +559,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		895635771ACBAD6900CA60E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -356,6 +585,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -373,10 +603,93 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MockHTTPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		895635A51ACBC0A500CA60E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MockHTTP-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = MockHTTP;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		895635A61ACBC0A500CA60E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "MockHTTP-OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = MockHTTP;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		895635A81ACBC0A500CA60E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MockHTTP-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		895635A91ACBC0A500CA60E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "MockHTTP-OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -405,6 +718,22 @@
 			buildConfigurations = (
 				895635791ACBAD6900CA60E9 /* Debug */,
 				8956357A1ACBAD6900CA60E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				895635A51ACBC0A500CA60E9 /* Debug */,
+				895635A61ACBC0A500CA60E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				895635A81ACBC0A500CA60E9 /* Debug */,
+				895635A91ACBC0A500CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
