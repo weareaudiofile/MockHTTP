@@ -20,4 +20,18 @@ public class URLResponse {
         self.body = body
         self.error = error
     }
+
+    public convenience init(string: String, statusCode: Int, headers: [NSObject: AnyObject] = [:]) {
+        let body = NSString(string: string).dataUsingEncoding(NSUTF8StringEncoding)
+        self.init(statusCode: statusCode, headers: headers, body: body, error: nil)
+    }
+
+    public convenience init(json: AnyObject, statusCode: Int, headers: [NSObject: AnyObject] = [:]) {
+        let body = NSJSONSerialization.dataWithJSONObject(json, options: .allZeros, error: nil)
+        self.init(statusCode: statusCode, headers: headers, body: body, error: nil)
+    }
+
+    public convenience init(error: NSError, statusCode: Int, headers: [NSObject: AnyObject] = [:]) {
+        self.init(statusCode: statusCode, headers: headers, body: nil, error: error)
+    }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 private var responseForURL : [NSURL: URLResponse] = [:]
 private var mockedRequests : [NSURLRequest] = []
+private var defaultResponse: URLResponse? = nil
 
 public func startMocking(configuration: NSURLSessionConfiguration?) {
     responseForURL = [:]
@@ -22,11 +23,17 @@ public func startMocking(configuration: NSURLSessionConfiguration?) {
 
 public func stopMocking(configuration: NSURLSessionConfiguration?) {
     NSURLProtocol.unregisterClass(URLProtocol.self)
+    defaultResponse = nil
     if let configuration = configuration, protocols = configuration.protocolClasses {
         let protocolClasses = NSMutableArray(array: protocols)
         protocolClasses.removeObject(URLProtocol.self)
         configuration.protocolClasses = protocolClasses as [AnyObject]
     }
+}
+
+// call with nil to remove the default response
+public func setDefaultResponse(response: URLResponse?) {
+    defaultResponse = response
 }
 
 public func requests() -> [NSURLRequest] {
@@ -42,7 +49,7 @@ public func registerURL(url: NSURL, withResponse response: URLResponse) {
 }
 
 public func responseForURL(url: NSURL) -> URLResponse? {
-    return responseForURL[url]
+    return responseForURL[url] ?? defaultResponse
 }
 
 public func reset() {

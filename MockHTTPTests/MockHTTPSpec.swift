@@ -47,20 +47,46 @@ class MockHTTPSpec: QuickSpec {
         }
 
         describe("making a request that is not registered") {
-            it("should fail") {
-                let request = NSURLRequest(URL: url)
-                var responseError : NSError? = nil
+            context("with a default response") {
+                beforeEach {
+                    let response = MockHTTP.URLResponse(statusCode: 404, headers: [:], body: nil)
+                }
 
-                let expectation = self.expectationWithDescription("failure")
+                it("should return the default response") {
+                    let request = NSURLRequest(URL: url)
+                    var responseError : NSError? = nil
 
-                let session = NSURLSession(configuration: configuration)
-                session.dataTaskWithRequest(request, completionHandler: { (body, urlResponse, error) in
-                    expectation.fulfill()
-                }).resume()
+                    let expectation = self.expectationWithDescription("failure")
 
-                self.waitForExpectationsWithTimeout(1, handler: { (error) in
-                    expect(error).toNot(beNil())
-                })
+                    let session = NSURLSession(configuration: configuration)
+                    session.dataTaskWithRequest(request, completionHandler: { (body, urlResponse, error) in
+                        let httpResponse = urlResponse as? NSHTTPURLResponse
+                        expect(httpResponse?.statusCode).to(equal(404))
+                        expectation.fulfill()
+                    }).resume()
+
+                    self.waitForExpectationsWithTimeout(1, handler: { (error) in
+                        expect(error).to(beNil())
+                    })
+                }
+            }
+
+            context("without a default response") {
+                it("should fail") {
+                    let request = NSURLRequest(URL: url)
+                    var responseError : NSError? = nil
+
+                    let expectation = self.expectationWithDescription("failure")
+
+                    let session = NSURLSession(configuration: configuration)
+                    session.dataTaskWithRequest(request, completionHandler: { (body, urlResponse, error) in
+                        expectation.fulfill()
+                    }).resume()
+
+                    self.waitForExpectationsWithTimeout(1, handler: { (error) in
+                        expect(error).toNot(beNil())
+                    })
+                }
             }
         }
     }
