@@ -9,11 +9,13 @@
 import Foundation
 
 private var responseForURL : [NSURL: URLResponse] = [:]
+private var responseForRequestFilter: [(matcher: (NSURLRequest) -> (Bool), response: URLResponse)] = []
 private var mockedRequests : [NSURLRequest] = []
 private var defaultResponse: URLResponse? = nil
 
 public func startMocking(configuration: NSURLSessionConfiguration?) {
     responseForURL = [:]
+    responseForRequestFilter = []
     mockedRequests = []
     NSURLProtocol.registerClass(URLProtocol.self)
     if let configuration = configuration {
@@ -44,12 +46,28 @@ public func addRequest(request: NSURLRequest) {
     mockedRequests.append(request)
 }
 
-public func registerURL(url: NSURL, withResponse response: URLResponse) {
+public func registerResponse(response: URLResponse, forURL url: NSURL) {
     responseForURL[url] = response
 }
 
-public func responseForURL(url: NSURL) -> URLResponse? {
+public func registerResponse(response: URLResponse, forRequestFilter requestFilter: (NSURLRequest) -> (Bool)) {
+    responseForRequestFilter.append((matcher: requestFilter, response: response))
+}
+
+private func responseForURL(url: NSURL) -> URLResponse? {
     return responseForURL[url] ?? defaultResponse
+}
+
+public func responseForRequest(request: NSURLRequest) -> URLResponse? {
+    for obj in responseForRequestFilter {
+        if (obj.matcher(request)) {
+            return obj.response
+        }
+    }
+    if let url = request.URL {
+        return responseForURL(url)
+    }
+    return nil;
 }
 
 public func reset() {

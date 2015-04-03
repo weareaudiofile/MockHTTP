@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "895635901ACBC0A500CA60E9"
-               BuildableName = "MockHTTP-OSX.framework"
+               BuildableName = "MockHTTP.framework"
                BlueprintName = "MockHTTP-OSX"
                ReferencedContainer = "container:MockHTTP.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "895635901ACBC0A500CA60E9"
-            BuildableName = "MockHTTP-OSX.framework"
+            BuildableName = "MockHTTP.framework"
             BlueprintName = "MockHTTP-OSX"
             ReferencedContainer = "container:MockHTTP.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "895635901ACBC0A500CA60E9"
-            BuildableName = "MockHTTP-OSX.framework"
+            BuildableName = "MockHTTP.framework"
             BlueprintName = "MockHTTP-OSX"
             ReferencedContainer = "container:MockHTTP.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "895635901ACBC0A500CA60E9"
-            BuildableName = "MockHTTP-OSX.framework"
+            BuildableName = "MockHTTP.framework"
             BlueprintName = "MockHTTP-OSX"
             ReferencedContainer = "container:MockHTTP.xcodeproj">
          </BuildableReference>

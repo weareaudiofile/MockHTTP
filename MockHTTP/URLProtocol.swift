@@ -23,7 +23,7 @@ public class URLProtocol : NSURLProtocol {
 
     override public func startLoading() {
         addRequest(self.request)
-        if let url = self.request.URL, let response = responseForURL(url),
+        if let url = self.request.URL, let response = responseForRequest(self.request),
            let urlResponse = NSHTTPURLResponse(URL: url, statusCode: response.statusCode, HTTPVersion: "1.1", headerFields: response.headers) {
             self.client?.URLProtocol(self, didReceiveResponse: urlResponse, cacheStoragePolicy: .NotAllowed)
             if let body = response.body {
