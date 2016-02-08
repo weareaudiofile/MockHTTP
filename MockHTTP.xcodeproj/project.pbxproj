@@ -334,6 +334,8 @@
 		895635561ACBAD6800CA60E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Rachel Brindle";
 				TargetAttributes = {
@@ -712,6 +714,7 @@
 				895635771ACBAD6900CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		895635781ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTPTests" */ = {
 			isa = XCConfigurationList;
@@ -720,6 +723,7 @@
 				8956357A1ACBAD6900CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSX" */ = {
 			isa = XCConfigurationList;
@@ -728,6 +732,7 @@
 				895635A61ACBC0A500CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -736,6 +741,7 @@
 				895635A91ACBC0A500CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,7 +10,8 @@ import Foundation
 
 public class URLProtocol : NSURLProtocol {
     override public class func canInitWithRequest(request: NSURLRequest) -> Bool {
-        return request.URL?.scheme == "http"
+        let result = request.URL?.scheme == "http"
+        return result
     }
 
     override public class func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
@@ -40,5 +41,9 @@ public class URLProtocol : NSURLProtocol {
             let error = NSError(domain: "MockHTTP", code: 1, userInfo: userInfo)
             self.client?.URLProtocol(self, didFailWithError: error)
         }
+    }
+
+    override public func stopLoading() {
+
     }
 }

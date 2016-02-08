@@ -1,2 +1,2 @@
-github "quick/nimble" "v0.4.1"
-github "quick/quick" "v0.3.0"
+github "Quick/Nimble" "v3.1.0"
+github "Quick/Quick" "v0.9.0"
