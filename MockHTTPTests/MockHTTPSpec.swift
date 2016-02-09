@@ -6,9 +6,12 @@ class MockHTTPSpec: QuickSpec {
     override func spec() {
         let url = NSURL(string: "http://example.com/foo")!
         var configuration: NSURLSessionConfiguration! = nil
+        var mockingContext: MockHTTP.MockingContext!
+
         beforeEach {
             configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-            MockHTTP.startMocking(configuration)
+            mockingContext = MockingContext(configuration: configuration)
+            MockHTTP.setGlobalContext(mockingContext)
         }
 
         describe("mocking http requests by URL") {
@@ -21,7 +24,7 @@ class MockHTTPSpec: QuickSpec {
             var httpResponse : NSHTTPURLResponse?
 
             beforeEach {
-                MockHTTP.registerResponse(response, forURL: url)
+                mockingContext.registerResponse(response, forURL: url)
                 request = NSURLRequest(URL: url)
                 session = NSURLSession(configuration: configuration)
             }
@@ -32,8 +35,8 @@ class MockHTTPSpec: QuickSpec {
                         httpResponse = urlResponse as? NSHTTPURLResponse
                         expect(body).to(equal(data))
                         expect(httpResponse?.statusCode).to(equal(200))
-                        expect(MockHTTP.requests().count).to(equal(1))
-                        expect(MockHTTP.requests().last?.URL?.absoluteString).to(equal("http://example.com/foo"))
+                        expect(mockingContext.requests().count).to(equal(1))
+                        expect(mockingContext.requests().last?.URL?.absoluteString).to(equal("http://example.com/foo"))
                         done()
                     }).resume()
                 }
@@ -50,7 +53,7 @@ class MockHTTPSpec: QuickSpec {
             var httpResponse : NSHTTPURLResponse? = nil
 
             beforeEach {
-                MockHTTP.registerResponse(response) {(request: NSURLRequest) -> Bool in
+                mockingContext.registerResponse(response) {(request: NSURLRequest) -> Bool in
                     return request.HTTPMethod == "PUT"
                 }
 
@@ -66,8 +69,8 @@ class MockHTTPSpec: QuickSpec {
                         httpResponse = urlResponse as? NSHTTPURLResponse
                         expect(body).to(equal(data))
                         expect(httpResponse?.statusCode).to(equal(200))
-                        expect(MockHTTP.requests().count).to(equal(1))
-                        expect(MockHTTP.requests().last?.URL?.absoluteString).to(equal("http://example.com/foo"))
+                        expect(mockingContext.requests().count).to(equal(1))
+                        expect(mockingContext.requests().last?.URL?.absoluteString).to(equal("http://example.com/foo"))
                         done()
                     }).resume()
                 }
@@ -78,7 +81,7 @@ class MockHTTPSpec: QuickSpec {
             context("with a default response") {
                 beforeEach {
                     let response = MockHTTP.URLResponse(statusCode: 404, headers: [:], body: nil)
-                    MockHTTP.setDefaultResponse(response)
+                    mockingContext.defaultResponse = response
                 }
 
                 it("should return the default response") {
