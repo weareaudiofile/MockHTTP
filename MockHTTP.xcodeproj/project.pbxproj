@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8376F62E1C6A1E7A00C5307B /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376F62D1C6A1E7A00C5307B /* Mutex.swift */; };
+		8376F62F1C6A1E7A00C5307B /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376F62D1C6A1E7A00C5307B /* Mutex.swift */; };
 		895635651ACBAD6800CA60E9 /* MockHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 895635641ACBAD6800CA60E9 /* MockHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8956356B1ACBAD6900CA60E9 /* MockHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */; };
 		8956357D1ACBAE4800CA60E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8956357B1ACBAE4800CA60E9 /* Nimble.framework */; };
@@ -76,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8376F62D1C6A1E7A00C5307B /* Mutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutex.swift; sourceTree = "<group>"; };
 		8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895635631ACBAD6800CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		895635641ACBAD6800CA60E9 /* MockHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockHTTP.h; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 			children = (
 				895635641ACBAD6800CA60E9 /* MockHTTP.h */,
 				895635821ACBAE7F00CA60E9 /* MockHTTP.swift */,
+				8376F62D1C6A1E7A00C5307B /* Mutex.swift */,
 				895635841ACBAEA800CA60E9 /* URLProtocol.swift */,
 				895635861ACBAEB100CA60E9 /* URLResponse.swift */,
 				895635621ACBAD6800CA60E9 /* Supporting Files */,
@@ -334,6 +338,8 @@
 		895635561ACBAD6800CA60E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Rachel Brindle";
 				TargetAttributes = {
@@ -408,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				895635831ACBAE7F00CA60E9 /* MockHTTP.swift in Sources */,
+				8376F62E1C6A1E7A00C5307B /* Mutex.swift in Sources */,
 				895635851ACBAEA800CA60E9 /* URLProtocol.swift in Sources */,
 				895635871ACBAEB100CA60E9 /* URLResponse.swift in Sources */,
 			);
@@ -427,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				895635AA1ACBC0FE00CA60E9 /* MockHTTP.swift in Sources */,
+				8376F62F1C6A1E7A00C5307B /* Mutex.swift in Sources */,
 				895635AB1ACBC0FE00CA60E9 /* URLProtocol.swift in Sources */,
 				895635AC1ACBC0FE00CA60E9 /* URLResponse.swift in Sources */,
 			);
@@ -712,6 +720,7 @@
 				895635771ACBAD6900CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		895635781ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTPTests" */ = {
 			isa = XCConfigurationList;
@@ -720,6 +729,7 @@
 				8956357A1ACBAD6900CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSX" */ = {
 			isa = XCConfigurationList;
@@ -728,6 +738,7 @@
 				895635A61ACBC0A500CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -736,6 +747,7 @@
 				895635A91ACBC0A500CA60E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

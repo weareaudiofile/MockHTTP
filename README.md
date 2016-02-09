@@ -21,32 +21,35 @@ import MockHTTP
 
 class MyExampleSpec: QuickSpec {
     override func spec() {
-        var session: NSURLSession! = nil
+        var session: NSURLSession!
+        var mockingContext: MockingContext!
+        var request: NSURLRequest!
+
         beforeEach {
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-            MockHTTP.startMocking(configuration)
+            mockingContext = MockingContext(configuration: configuration)
+
+            MockHTTP.setGlobalContext(mockingContext)
             session = NSURLSession(configuration: configuration)
         }
-        
+
         describe("making a request") {
             var response: MockHTTP.URLResponse! = nil
             beforeEach {
-                let url = NSURL(string: "http://example.com/foo")
-                
+                let url = NSURL(string: "http://example.com/foo")!
+
+                request = NSURLRequest(URL: url)
                 response = MockHTTP.URLResponse(string: "hello", statusCode: 200)
                 // there's also an encoding for any json serializable object
-                MockHTTP.registerURL(url, withResponse: response)
+                mockingContext.registerResponse(response, forURL: url)
             }
             it("is mocked") {
-                let expectation = self.expectationWithDescription("mocked")
-                session.dataTaskWithRequest(request) {(body: NSData!, urlResponse: NSURLResponse!, error: NSError!) in
-                    httpResponse = urlResponse as? NSHTTPURLResponse
-                    expect(httpResponse?.statusCode).to(equal(200))
-                    expectation.fulfill()
-                }.resume()
-                
-                self.waitForExpectationWithTimeout(1) {(error) in
-                    expect(error).to(beNil())
+                waitUntil { done in
+                    session.dataTaskWithRequest(request) {(body: NSData?, urlResponse: NSURLResponse?, error: NSError?) in
+                        let httpResponse = urlResponse as? NSHTTPURLResponse
+                        expect(httpResponse?.statusCode).to(equal(200))
+                        done()
+                    }.resume()
                 }
             }
         }
