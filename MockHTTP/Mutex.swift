@@ -38,7 +38,7 @@ final class Mutex {
     /// - parameter f: A function that performs the critical work. Can optionally return a value of generic type `U`
     ///
     /// - returns: the value that was returned by `f`.
-    func inCriticalSection<U>(@noescape f: Void -> U) -> U {
+    func inCriticalSection<U>(@noescape _ f: (Void) -> U) -> U {
         pthread_mutex_lock(&mutex)
         let returned = f()
         pthread_mutex_unlock(&mutex)

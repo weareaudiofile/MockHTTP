@@ -11,10 +11,10 @@ import Foundation
 public class URLResponse {
     public let statusCode : Int
     public let headers : [String: String]
-    public let body : NSData?
+    public let body : Data?
     public let error : NSError?
 
-    public init(statusCode: Int, headers: [String:String], body: NSData?, error: NSError? = nil) {
+    public init(statusCode: Int, headers: [String:String], body: Data?, error: NSError? = nil) {
         self.statusCode = statusCode
         self.headers = headers
         self.body = body
@@ -22,12 +22,12 @@ public class URLResponse {
     }
 
     public convenience init(string: String, statusCode: Int, headers: [String: String] = [:]) {
-        let body = NSString(string: string).dataUsingEncoding(NSUTF8StringEncoding)
+        let body = NSString(string: string).data(using: String.Encoding.utf8.rawValue)
         self.init(statusCode: statusCode, headers: headers, body: body, error: nil)
     }
 
     public convenience init(json: AnyObject, statusCode: Int, headers: [String: String] = [:]) {
-        let body = try? NSJSONSerialization.dataWithJSONObject(json, options: [])
+        let body = try? JSONSerialization.data(withJSONObject: json, options: [])
         self.init(statusCode: statusCode, headers: headers, body: body, error: nil)
     }
 

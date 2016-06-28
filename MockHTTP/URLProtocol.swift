@@ -8,39 +8,39 @@
 
 import Foundation
 
-public class URLProtocol : NSURLProtocol {
-    override public class func canInitWithRequest(request: NSURLRequest) -> Bool {
-        let result = request.URL?.scheme == "http"
+public class URLProtocol : Foundation.URLProtocol {
+    override public class func canInit(with request: URLRequest) -> Bool {
+        let result = request.url?.scheme == "http"
         return result
     }
 
-    override public class func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
+    override public class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
 
-    override public class func requestIsCacheEquivalent(a: NSURLRequest, toRequest:NSURLRequest) -> Bool {
+    override public class func requestIsCacheEquivalent(_ a: URLRequest, to toRequest:URLRequest) -> Bool {
         return false
     }
 
     override public func startLoading() {
         ctx?.addRequest(self.request)
-        if  let url = self.request.URL,
+        if  let url = self.request.url,
             let response = ctx?.responseForRequest(self.request),
-            let urlResponse = NSHTTPURLResponse(URL: url, statusCode: response.statusCode, HTTPVersion: "1.1", headerFields: response.headers) {
-                self.client?.URLProtocol(self, didReceiveResponse: urlResponse, cacheStoragePolicy: .NotAllowed)
+            let urlResponse = HTTPURLResponse(url: url, statusCode: response.statusCode, httpVersion: "1.1", headerFields: response.headers) {
+                self.client?.urlProtocol(self, didReceive: urlResponse, cacheStoragePolicy: .notAllowed)
                 if let body = response.body {
-                    self.client?.URLProtocol(self, didLoadData: body)
+                    self.client?.urlProtocol(self, didLoad: body)
                 }
                 if let error = response.error {
-                    self.client?.URLProtocol(self, didFailWithError: error)
+                    self.client?.urlProtocol(self, didFailWithError: error)
                 } else {
-                    self.client?.URLProtocolDidFinishLoading(self)
+                    self.client?.urlProtocolDidFinishLoading(self)
                 }
         } else {
-            let message = "Request for URL: \(self.request.URL) not registered"
+            let message = "Request for URL: \(self.request.url) not registered"
             let userInfo : [NSObject: AnyObject] = [NSLocalizedDescriptionKey: message]
             let error = NSError(domain: "MockHTTP", code: 1, userInfo: userInfo)
-            self.client?.URLProtocol(self, didFailWithError: error)
+            self.client?.urlProtocol(self, didFailWithError: error)
         }
     }
 

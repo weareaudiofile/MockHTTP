@@ -13,22 +13,22 @@ private(set) public var ctx: MockingContext?
 /// Set the global context to be used for MockHTTP. Due to the nature of how our mock URLProtocol class is registered/deregistered with NSURLProtocol, and how it works internally, it must be stored and used as a global context.
 ///
 /// - parameter context: The global context to be set. You can reset (and disable) mocking by specifying `nil` here.
-public func setGlobalContext(context: MockingContext?) {
+public func setGlobalContext(_ context: MockingContext?) {
     ctx = context
 }
 
 public final class MockingContext {
-    private var responseForURL : [NSURL: URLResponse] = [:]
-    private var responseForRequestFilter: [(matcher: (NSURLRequest) -> (Bool), response: URLResponse)] = []
-    private var mockedRequests : [NSURLRequest] = []
+    private var responseForURL : [URL: URLResponse] = [:]
+    private var responseForRequestFilter: [(matcher: (URLRequest) -> (Bool), response: URLResponse)] = []
+    private var mockedRequests : [URLRequest] = []
     private let mutex: Mutex
 
-    private let configuration: NSURLSessionConfiguration?
+    private let configuration: URLSessionConfiguration?
 
-    public init(configuration: NSURLSessionConfiguration?) {
+    public init(configuration: URLSessionConfiguration?) {
         mutex = Mutex(recursive: true)
 
-        NSURLProtocol.registerClass(URLProtocol.self)
+        Foundation.URLProtocol.registerClass(URLProtocol.self)
 
         self.configuration = configuration
 
@@ -39,13 +39,13 @@ public final class MockingContext {
     }
 
     deinit {
-        NSURLProtocol.unregisterClass(URLProtocol.self)
+        Foundation.URLProtocol.unregisterClass(URLProtocol.self)
 
         if let configuration = configuration, var protocols = configuration.protocolClasses {
 
-            let foundIndex = protocols.indexOf { $0 == URLProtocol.self }
+            let foundIndex = protocols.index { $0 == URLProtocol.self }
             if let indexToRemove = foundIndex {
-                protocols.removeAtIndex(indexToRemove)
+                protocols.remove(at: indexToRemove)
             }
 
             configuration.protocolClasses = protocols
@@ -53,7 +53,7 @@ public final class MockingContext {
 
     }
 
-    private func withLock<U>(@noescape f: MockingContext -> U) -> U {
+    private func withLock<U>(@noescape _ f: (MockingContext) -> U) -> U {
         return mutex.inCriticalSection { f(self) }
     }
 
@@ -67,42 +67,42 @@ public final class MockingContext {
         }
     }
 
-    public func requests() -> [NSURLRequest] {
+    public func requests() -> [URLRequest] {
         return withLock { $0.mockedRequests }
     }
 
-    public func addRequest(request: NSURLRequest) {
+    public func addRequest(_ request: URLRequest) {
         withLock { $0.mockedRequests.append(request) }
     }
 
-    public func removeRequest(request: NSURLRequest) {
+    public func removeRequest(_ request: URLRequest) {
         withLock {
-            if let findIndex = $0.mockedRequests.indexOf(request) {
-                $0.mockedRequests.removeAtIndex(findIndex)
+            if let findIndex = $0.mockedRequests.index(of: request) {
+                $0.mockedRequests.remove(at: findIndex)
             }
         }
     }
 
-    public func registerResponse(response: URLResponse, forURL url: NSURL) {
+    public func registerResponse(_ response: URLResponse, forURL url: URL) {
         withLock { $0.responseForURL[url] = response }
     }
 
-    public func registerResponse(response: URLResponse, forRequestFilter requestFilter: (NSURLRequest) -> (Bool)) {
+    public func registerResponse(_ response: URLResponse, forRequestFilter requestFilter: (URLRequest) -> (Bool)) {
         withLock { $0.responseForRequestFilter.append((matcher: requestFilter, response: response)) }
     }
 
-    public func responseForURL(url: NSURL) -> URLResponse? {
+    public func responseForURL(_ url: URL) -> URLResponse? {
         return withLock { $0.responseForURL[url] ?? $0.defaultResponse }
     }
 
-    public func responseForRequest(request: NSURLRequest) -> URLResponse? {
+    public func responseForRequest(_ request: URLRequest) -> URLResponse? {
         return withLock {
             for obj in $0.responseForRequestFilter {
                 if (obj.matcher(request)) {
                     return obj.response
                 }
             }
-            if let url = request.URL {
+            if let url = request.url {
                 return $0.responseForURL(url)
             }
 

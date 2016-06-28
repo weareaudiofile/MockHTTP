@@ -1,2 +1,2 @@
-github "Quick/Quick" ~> 0.9.0
-github "Quick/Nimble" ~> 3.0.0
+github "norio-nomura/Quick" "nn-swift-3-compatibility"
+github "norio-nomura/Nimble" "nn-swift-3-compatibility"

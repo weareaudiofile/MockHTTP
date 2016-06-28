@@ -4,39 +4,39 @@ import MockHTTP
 
 class MockHTTPSpec: QuickSpec {
     override func spec() {
-        let url = NSURL(string: "http://example.com/foo")!
-        var configuration: NSURLSessionConfiguration! = nil
+        let url = URL(string: "http://example.com/foo")!
+        var configuration: URLSessionConfiguration! = nil
         var mockingContext: MockHTTP.MockingContext!
 
         beforeEach {
-            configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            configuration = URLSessionConfiguration.default()
             mockingContext = MockingContext(configuration: configuration)
             MockHTTP.setGlobalContext(mockingContext)
         }
 
         describe("mocking http requests by URL") {
-            let data = NSString(string: "hello").dataUsingEncoding(NSUTF8StringEncoding)!
+            let data = NSString(string: "hello").data(using: String.Encoding.utf8.rawValue)
             let headers = ["foo": "bar"]
             let response = MockHTTP.URLResponse(statusCode: 200, headers: headers, body: data)
 
-            var session : NSURLSession!
-            var request : NSURLRequest!
-            var httpResponse : NSHTTPURLResponse?
+            var session : URLSession!
+            var request : URLRequest!
+            var httpResponse : HTTPURLResponse?
 
             beforeEach {
                 mockingContext.registerResponse(response, forURL: url)
-                request = NSURLRequest(URL: url)
-                session = NSURLSession(configuration: configuration)
+                request = URLRequest(url: url)
+                session = URLSession(configuration: configuration)
             }
 
             it("should return the registered response") {
                 waitUntil(timeout: 1) { done in
-                    session.dataTaskWithRequest(request, completionHandler: { (body, urlResponse, error) -> Void in
-                        httpResponse = urlResponse as? NSHTTPURLResponse
+                    session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) -> Void in
+                        httpResponse = urlResponse as? HTTPURLResponse
                         expect(body).to(equal(data))
                         expect(httpResponse?.statusCode).to(equal(200))
                         expect(mockingContext.requests().count).to(equal(1))
-                        expect(mockingContext.requests().last?.URL?.absoluteString).to(equal("http://example.com/foo"))
+                        expect(mockingContext.requests().last?.url?.absoluteString).to(equal("http://example.com/foo"))
                         done()
                     }).resume()
                 }
@@ -44,33 +44,33 @@ class MockHTTPSpec: QuickSpec {
         }
 
         describe("mocking http requests for request filter") {
-            let data = NSString(string: "hello").dataUsingEncoding(NSUTF8StringEncoding)!
+            let data = NSString(string: "hello").data(using: String.Encoding.utf8.rawValue)!
             let headers = ["foo": "bar"]
             let response = MockHTTP.URLResponse(statusCode: 200, headers: headers, body: data)
 
-            var session : NSURLSession! = nil
-            var request : NSMutableURLRequest! = nil
-            var httpResponse : NSHTTPURLResponse? = nil
+            var session : URLSession! = nil
+            var request : URLRequest! = nil
+            var httpResponse : HTTPURLResponse? = nil
 
             beforeEach {
-                mockingContext.registerResponse(response) {(request: NSURLRequest) -> Bool in
-                    return request.HTTPMethod == "PUT"
+                mockingContext.registerResponse(response) {(request: URLRequest) -> Bool in
+                    return request.httpMethod == "PUT"
                 }
 
-                request = NSMutableURLRequest(URL: url)
-                request.HTTPMethod = "PUT"
+                request = URLRequest(url: url)
+                request.httpMethod = "PUT"
 
-                session = NSURLSession(configuration: configuration)
+                session = URLSession(configuration: configuration)
             }
 
             it("should return the registered response") {
                 waitUntil(timeout: 1) { done in
-                    session.dataTaskWithRequest(request, completionHandler: { (body, urlResponse, error) -> Void in
-                        httpResponse = urlResponse as? NSHTTPURLResponse
+                    session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) -> Void in
+                        httpResponse = urlResponse as? HTTPURLResponse
                         expect(body).to(equal(data))
                         expect(httpResponse?.statusCode).to(equal(200))
                         expect(mockingContext.requests().count).to(equal(1))
-                        expect(mockingContext.requests().last?.URL?.absoluteString).to(equal("http://example.com/foo"))
+                        expect(mockingContext.requests().last?.url?.absoluteString).to(equal("http://example.com/foo"))
                         done()
                     }).resume()
                 }
@@ -85,12 +85,12 @@ class MockHTTPSpec: QuickSpec {
                 }
 
                 it("should return the default response") {
-                    let request = NSURLRequest(URL: url)
-                    let session = NSURLSession(configuration: configuration)
+                    let request = URLRequest(url: url)
+                    let session = URLSession(configuration: configuration)
 
                     waitUntil(timeout: 1) { done in
-                        session.dataTaskWithRequest(request, completionHandler: { (body, urlResponse, error) in
-                            let httpResponse = urlResponse as? NSHTTPURLResponse
+                        session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) in
+                            let httpResponse = urlResponse as? HTTPURLResponse
                             expect(httpResponse?.statusCode).to(equal(404))
                             done()
                         }).resume()
@@ -100,11 +100,11 @@ class MockHTTPSpec: QuickSpec {
 
             context("without a default response") {
                 it("should fail") {
-                    let request = NSURLRequest(URL: url)
-                    let session = NSURLSession(configuration: configuration)
+                    let request = NSURLRequest(url: url)
+                    let session = URLSession(configuration: configuration)
 
                     waitUntil(timeout: 1) { done in
-                        session.dataTaskWithRequest(request, completionHandler: { (body, urlResponse, error) in
+                        session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) in
                             expect(error).toNot(beNil())
                             done()
                         }).resume()
