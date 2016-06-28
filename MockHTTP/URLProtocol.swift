@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class URLProtocol : Foundation.URLProtocol {
+public class MockURLProtocol : URLProtocol {
     override public class func canInit(with request: URLRequest) -> Bool {
         let result = request.url?.scheme == "http"
         return result
@@ -23,9 +23,9 @@ public class URLProtocol : Foundation.URLProtocol {
     }
 
     override public func startLoading() {
-        ctx?.addRequest(self.request)
+        ctx?.add(self.request)
         if  let url = self.request.url,
-            let response = ctx?.responseForRequest(self.request),
+            let response = ctx?.response(for: self.request),
             let urlResponse = HTTPURLResponse(url: url, statusCode: response.statusCode, httpVersion: "1.1", headerFields: response.headers) {
                 self.client?.urlProtocol(self, didReceive: urlResponse, cacheStoragePolicy: .notAllowed)
                 if let body = response.body {

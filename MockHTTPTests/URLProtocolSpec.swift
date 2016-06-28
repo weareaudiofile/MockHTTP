@@ -12,7 +12,7 @@ class URLProtocolSpec: QuickSpec {
             }
 
             it("can init request") {
-                expect(MockHTTP.URLProtocol.canInit(with: request)).to(beTruthy())
+                expect(MockURLProtocol.canInit(with: request)).to(beTruthy())
             }
         }
 
@@ -22,7 +22,7 @@ class URLProtocolSpec: QuickSpec {
             }
 
             it("can't init request") {
-                expect(MockHTTP.URLProtocol.canInit(with: request)).to(beFalsy())
+                expect(MockURLProtocol.canInit(with: request)).to(beFalsy())
             }
         }
     }

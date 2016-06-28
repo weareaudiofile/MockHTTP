@@ -24,7 +24,7 @@ class MockHTTPSpec: QuickSpec {
             var httpResponse : HTTPURLResponse?
 
             beforeEach {
-                mockingContext.registerResponse(response, forURL: url)
+                mockingContext.register(response: response, for: url)
                 request = URLRequest(url: url)
                 session = URLSession(configuration: configuration)
             }
@@ -53,7 +53,7 @@ class MockHTTPSpec: QuickSpec {
             var httpResponse : HTTPURLResponse? = nil
 
             beforeEach {
-                mockingContext.registerResponse(response) {(request: URLRequest) -> Bool in
+                mockingContext.register(response: response) {(request: URLRequest) -> Bool in
                     return request.httpMethod == "PUT"
                 }
 
