@@ -85,11 +85,11 @@ public final class MockingContext {
         }
     }
 
-    public func register(response: URLResponse, for url: URL) {
+    public func register(_ response: URLResponse, for url: URL) {
         withLock { $0.responseForURL[url] = response }
     }
 
-    public func register(response: URLResponse, for requestFilter: RequestFilter) {
+    public func register(_ response: URLResponse, for requestFilter: RequestFilter) {
         withLock { $0.responseForRequestFilter.append((matcher: requestFilter, response: response)) }
     }
 

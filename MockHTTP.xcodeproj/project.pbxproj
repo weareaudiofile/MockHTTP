@@ -345,9 +345,11 @@
 				TargetAttributes = {
 					8956355E1ACBAD6800CA60E9 = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0800;
 					};
 					895635691ACBAD6900CA60E9 = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0800;
 					};
 					895635901ACBC0A500CA60E9 = {
 						CreatedOnToolsVersion = 6.3;
@@ -572,6 +574,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -588,6 +591,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -606,6 +610,7 @@
 				INFOPLIST_FILE = MockHTTPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -620,6 +625,7 @@
 				INFOPLIST_FILE = MockHTTPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
