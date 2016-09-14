@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8956355E1ACBAD6800CA60E9"
+               BlueprintIdentifier = "895635901ACBC0A500CA60E9"
                BuildableName = "MockHTTP.framework"
-               BlueprintName = "MockHTTP"
+               BlueprintName = "MockHTTP-macOS"
                ReferencedContainer = "container:MockHTTP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "895635691ACBAD6900CA60E9"
-               BuildableName = "MockHTTPTests.xctest"
-               BlueprintName = "MockHTTPTests"
+               BlueprintIdentifier = "8956359A1ACBC0A500CA60E9"
+               BuildableName = "MockHTTP-macOSTests.xctest"
+               BlueprintName = "MockHTTP-macOSTests"
                ReferencedContainer = "container:MockHTTP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "895635691ACBAD6900CA60E9"
-               BuildableName = "MockHTTPTests.xctest"
-               BlueprintName = "MockHTTPTests"
+               BlueprintIdentifier = "8956359A1ACBC0A500CA60E9"
+               BuildableName = "MockHTTP-macOSTests.xctest"
+               BlueprintName = "MockHTTP-macOSTests"
                ReferencedContainer = "container:MockHTTP.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8956355E1ACBAD6800CA60E9"
+            BlueprintIdentifier = "895635901ACBC0A500CA60E9"
             BuildableName = "MockHTTP.framework"
-            BlueprintName = "MockHTTP"
+            BlueprintName = "MockHTTP-macOS"
             ReferencedContainer = "container:MockHTTP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -78,9 +78,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8956355E1ACBAD6800CA60E9"
+            BlueprintIdentifier = "895635901ACBC0A500CA60E9"
             BuildableName = "MockHTTP.framework"
-            BlueprintName = "MockHTTP"
+            BlueprintName = "MockHTTP-macOS"
             ReferencedContainer = "container:MockHTTP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,9 +96,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8956355E1ACBAD6800CA60E9"
+            BlueprintIdentifier = "895635901ACBC0A500CA60E9"
             BuildableName = "MockHTTP.framework"
-            BlueprintName = "MockHTTP"
+            BlueprintName = "MockHTTP-macOS"
             ReferencedContainer = "container:MockHTTP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

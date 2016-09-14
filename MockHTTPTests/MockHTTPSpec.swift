@@ -9,7 +9,7 @@ class MockHTTPSpec: QuickSpec {
         var mockingContext: MockHTTP.MockingContext!
 
         beforeEach {
-            configuration = URLSessionConfiguration.default()
+            configuration = URLSessionConfiguration.default
             mockingContext = MockingContext(configuration: configuration)
             MockHTTP.setGlobalContext(mockingContext)
         }

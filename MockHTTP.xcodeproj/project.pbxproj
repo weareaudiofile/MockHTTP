@@ -82,7 +82,7 @@
 		8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895635631ACBAD6800CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		895635641ACBAD6800CA60E9 /* MockHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockHTTP.h; sourceTree = "<group>"; };
-		8956356A1ACBAD6900CA60E9 /* MockHTTPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockHTTPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8956356A1ACBAD6900CA60E9 /* MockHTTP-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MockHTTP-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		895635701ACBAD6900CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8956357B1ACBAE4800CA60E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		8956357C1ACBAE4800CA60E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
@@ -94,7 +94,7 @@
 		895635911ACBC0A500CA60E9 /* MockHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MockHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		895635941ACBC0A500CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		895635951ACBC0A500CA60E9 /* MockHTTP-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MockHTTP-OSX.h"; sourceTree = "<group>"; };
-		8956359B1ACBC0A500CA60E9 /* MockHTTP-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MockHTTP-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8956359B1ACBC0A500CA60E9 /* MockHTTP-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MockHTTP-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		895635A11ACBC0A500CA60E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		895635B11ACBC1EE00CA60E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		895635B21ACBC1EE00CA60E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = SOURCE_ROOT; };
@@ -153,9 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */,
-				8956356A1ACBAD6900CA60E9 /* MockHTTPTests.xctest */,
+				8956356A1ACBAD6900CA60E9 /* MockHTTP-iOSTests.xctest */,
 				895635911ACBC0A500CA60E9 /* MockHTTP.framework */,
-				8956359B1ACBC0A500CA60E9 /* MockHTTP-OSXTests.xctest */,
+				8956359B1ACBC0A500CA60E9 /* MockHTTP-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,9 +258,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8956355E1ACBAD6800CA60E9 /* MockHTTP */ = {
+		8956355E1ACBAD6800CA60E9 /* MockHTTP-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 895635751ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP" */;
+			buildConfigurationList = 895635751ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-iOS" */;
 			buildPhases = (
 				8956355A1ACBAD6800CA60E9 /* Sources */,
 				8956355B1ACBAD6800CA60E9 /* Frameworks */,
@@ -271,14 +271,14 @@
 			);
 			dependencies = (
 			);
-			name = MockHTTP;
+			name = "MockHTTP-iOS";
 			productName = MockHTTP;
 			productReference = 8956355F1ACBAD6800CA60E9 /* MockHTTP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		895635691ACBAD6900CA60E9 /* MockHTTPTests */ = {
+		895635691ACBAD6900CA60E9 /* MockHTTP-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 895635781ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTPTests" */;
+			buildConfigurationList = 895635781ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-iOSTests" */;
 			buildPhases = (
 				895635661ACBAD6900CA60E9 /* Sources */,
 				895635671ACBAD6900CA60E9 /* Frameworks */,
@@ -290,14 +290,14 @@
 			dependencies = (
 				8956356D1ACBAD6900CA60E9 /* PBXTargetDependency */,
 			);
-			name = MockHTTPTests;
+			name = "MockHTTP-iOSTests";
 			productName = MockHTTPTests;
-			productReference = 8956356A1ACBAD6900CA60E9 /* MockHTTPTests.xctest */;
+			productReference = 8956356A1ACBAD6900CA60E9 /* MockHTTP-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		895635901ACBC0A500CA60E9 /* MockHTTP-OSX */ = {
+		895635901ACBC0A500CA60E9 /* MockHTTP-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSX" */;
+			buildConfigurationList = 895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-macOS" */;
 			buildPhases = (
 				8956358C1ACBC0A500CA60E9 /* Sources */,
 				8956358D1ACBC0A500CA60E9 /* Frameworks */,
@@ -308,14 +308,14 @@
 			);
 			dependencies = (
 			);
-			name = "MockHTTP-OSX";
+			name = "MockHTTP-macOS";
 			productName = "MockHTTP-OSX";
 			productReference = 895635911ACBC0A500CA60E9 /* MockHTTP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8956359A1ACBC0A500CA60E9 /* MockHTTP-OSXTests */ = {
+		8956359A1ACBC0A500CA60E9 /* MockHTTP-macOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSXTests" */;
+			buildConfigurationList = 895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-macOSTests" */;
 			buildPhases = (
 				895635971ACBC0A500CA60E9 /* Sources */,
 				895635981ACBC0A500CA60E9 /* Frameworks */,
@@ -327,9 +327,9 @@
 			dependencies = (
 				8956359E1ACBC0A500CA60E9 /* PBXTargetDependency */,
 			);
-			name = "MockHTTP-OSXTests";
+			name = "MockHTTP-macOSTests";
 			productName = "MockHTTP-OSXTests";
-			productReference = 8956359B1ACBC0A500CA60E9 /* MockHTTP-OSXTests.xctest */;
+			productReference = 8956359B1ACBC0A500CA60E9 /* MockHTTP-macOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -373,10 +373,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8956355E1ACBAD6800CA60E9 /* MockHTTP */,
-				895635691ACBAD6900CA60E9 /* MockHTTPTests */,
-				895635901ACBC0A500CA60E9 /* MockHTTP-OSX */,
-				8956359A1ACBC0A500CA60E9 /* MockHTTP-OSXTests */,
+				8956355E1ACBAD6800CA60E9 /* MockHTTP-iOS */,
+				895635691ACBAD6900CA60E9 /* MockHTTP-iOSTests */,
+				895635901ACBC0A500CA60E9 /* MockHTTP-macOS */,
+				8956359A1ACBC0A500CA60E9 /* MockHTTP-macOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -458,12 +458,12 @@
 /* Begin PBXTargetDependency section */
 		8956356D1ACBAD6900CA60E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8956355E1ACBAD6800CA60E9 /* MockHTTP */;
+			target = 8956355E1ACBAD6800CA60E9 /* MockHTTP-iOS */;
 			targetProxy = 8956356C1ACBAD6900CA60E9 /* PBXContainerItemProxy */;
 		};
 		8956359E1ACBC0A500CA60E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 895635901ACBC0A500CA60E9 /* MockHTTP-OSX */;
+			target = 895635901ACBC0A500CA60E9 /* MockHTTP-macOS */;
 			targetProxy = 8956359D1ACBC0A500CA60E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -571,7 +571,7 @@
 				INFOPLIST_FILE = MockHTTP/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MockHTTP;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -589,7 +589,7 @@
 				INFOPLIST_FILE = MockHTTP/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MockHTTP;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -599,7 +599,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
@@ -618,7 +617,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
@@ -725,7 +723,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		895635751ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP" */ = {
+		895635751ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				895635761ACBAD6900CA60E9 /* Debug */,
@@ -734,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		895635781ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTPTests" */ = {
+		895635781ACBAD6900CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				895635791ACBAD6900CA60E9 /* Debug */,
@@ -743,7 +741,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSX" */ = {
+		895635A41ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				895635A51ACBC0A500CA60E9 /* Debug */,
@@ -752,7 +750,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-OSXTests" */ = {
+		895635A71ACBC0A500CA60E9 /* Build configuration list for PBXNativeTarget "MockHTTP-macOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				895635A81ACBC0A500CA60E9 /* Debug */,
