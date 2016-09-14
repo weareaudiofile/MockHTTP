@@ -38,7 +38,7 @@ public class MockURLProtocol : URLProtocol {
                 }
         } else {
             let message = "Request for URL: \(self.request.url) not registered"
-            let userInfo : [NSObject: AnyObject] = [NSLocalizedDescriptionKey: message]
+            let userInfo = [NSLocalizedDescriptionKey: message]
             let error = NSError(domain: "MockHTTP", code: 1, userInfo: userInfo)
             self.client?.urlProtocol(self, didFailWithError: error)
         }

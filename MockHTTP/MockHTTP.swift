@@ -55,7 +55,7 @@ public final class MockingContext {
 
     }
 
-    private func withLock<U>( _ f: @noescape (MockingContext) -> U) -> U {
+    private func withLock<U>( _ f: (MockingContext) -> U) -> U {
         return mutex.inCriticalSection { f(self) }
     }
 
@@ -89,7 +89,7 @@ public final class MockingContext {
         withLock { $0.responseForURL[url] = response }
     }
 
-    public func register(_ response: URLResponse, for requestFilter: RequestFilter) {
+    public func register(_ response: URLResponse, for requestFilter: @escaping RequestFilter) {
         withLock { $0.responseForRequestFilter.append((matcher: requestFilter, response: response)) }
     }
 
