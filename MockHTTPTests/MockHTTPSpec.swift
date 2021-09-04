@@ -30,7 +30,7 @@ class MockHTTPSpec: QuickSpec {
             }
 
             it("should return the registered response") {
-                waitUntil(timeout: 1) { done in
+                waitUntil(timeout: DispatchTimeInterval.seconds(1) ) { done in
                     session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) -> Void in
                         httpResponse = urlResponse as? HTTPURLResponse
                         expect(body).to(equal(data))
@@ -64,7 +64,7 @@ class MockHTTPSpec: QuickSpec {
             }
 
             it("should return the registered response") {
-                waitUntil(timeout: 1) { done in
+                waitUntil(timeout: DispatchTimeInterval.seconds(1) ) { done in
                     session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) -> Void in
                         httpResponse = urlResponse as? HTTPURLResponse
                         expect(body).to(equal(data))
@@ -88,7 +88,7 @@ class MockHTTPSpec: QuickSpec {
                     let request = URLRequest(url: url)
                     let session = URLSession(configuration: configuration)
 
-                    waitUntil(timeout: 1) { done in
+                    waitUntil(timeout: DispatchTimeInterval.seconds(1) ) { done in
                         session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) in
                             let httpResponse = urlResponse as? HTTPURLResponse
                             expect(httpResponse?.statusCode).to(equal(404))
@@ -103,7 +103,7 @@ class MockHTTPSpec: QuickSpec {
                     let request = NSURLRequest(url: url)
                     let session = URLSession(configuration: configuration)
 
-                    waitUntil(timeout: 1) { done in
+                    waitUntil(timeout: DispatchTimeInterval.seconds(1) ) { done in
                         session.dataTask(with: request as URLRequest, completionHandler: { (body, urlResponse, error) in
                             expect(error).toNot(beNil())
                             done()

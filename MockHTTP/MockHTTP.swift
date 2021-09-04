@@ -45,7 +45,7 @@ public final class MockingContext {
 
         if let configuration = configuration, var protocols = configuration.protocolClasses {
 
-            let foundIndex = protocols.index { $0 == MockURLProtocol.self }
+            let foundIndex = protocols.firstIndex { $0 == MockURLProtocol.self }
             if let indexToRemove = foundIndex {
                 protocols.remove(at: indexToRemove)
             }
@@ -79,7 +79,7 @@ public final class MockingContext {
 
     public func remove(_ request: URLRequest) {
         withLock {
-            if let findIndex = $0.mockedRequests.index(of: request) {
+            if let findIndex = $0.mockedRequests.firstIndex(of: request) {
                 $0.mockedRequests.remove(at: findIndex)
             }
         }
